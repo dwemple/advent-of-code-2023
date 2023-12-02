@@ -1,3 +1,6 @@
+import time
+start_time = time.time()
+
 with open('day1-data.txt') as f:
     data = f.readlines()
 
@@ -26,10 +29,13 @@ def findNumbers(line):
     end = str(result[0].value) + str(result[-1].value)
     return int(end) 
 
-
 for line in data:
     final += findNumbers(line)
-            
         
 print(final)
+
+end_time = time.time()
+
+exec_time = (start_time - end_time) * -1000
+print("Execution time: " + str(exec_time) + " ms")
 
